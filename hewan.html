@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hewan</title>
+  <style>
+    #imageContainer {
+      margin-top: 20px;
+    }
+
+    #selectedImage {
+      max-width: 300px;
+      max-height: 300px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<label for="imageSelector">Pilih Gambar:</label>
+<select id="imageSelector" onchange="displayImage()">
+  <option value="" disabled selected>Pilih Gambar</option>
+  <option value="image/makhluk-mitologi-centaurs.jpg">Centaurus</option>
+  <option value="image/Screenshot_20230924-114525_Chrome-2562320072.webp">Kyubi</option>
+  <option value="image/makhluk-mitologi-yunani-pegasus.webp">Pegasus</option>
+  <option value="image/download.jpeg">Phoenix</option>
+  <option value="image/tips-merawat-marmut-818x490.jpg">Marmut</option>
+ 
+</select>
+
+<div id="imageContainer">
+  <img id="selectedImage" alt="Selected Image">
+</div>
+
+<script>
+  function displayImage() {
+    var imageSelector = document.getElementById("imageSelector");
+    var selectedImage = document.getElementById("selectedImage");
+
+ 
+    var selectedValue = imageSelector.value;
+
+   
+    if (selectedValue !== "") {
+      selectedImage.src = selectedValue;
+
+     
+      alert("Nama File Gambar: " + selectedValue);
+    } else {
+      
+      selectedImage.src = "";
+    }
+  }
+</script>
+
+</body>
+</html>
